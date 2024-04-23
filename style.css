@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    background-image:
+    radial-gradient(at 40% 20%, hsla(28, 100%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, hsla(340, 100%, 76%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(242, 100%, 70%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(343, 100%, 76%, 1) 0px, transparent 50%);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container .form{
+    background-color: rgba(250, 235, 215, 0.263);
+    border: 1px solid #999;
+    position: absolute;
+    border-radius: 20px;
+    padding: 30px;
+    width: 80%;
+    max-width: 500px;
+    
+    height: 100%;
+    transition: all 0.4s ease;
+    /* margin: 20px; */
+}
+
+.container .form .title{
+    text-align: center;
+}
+
+.container .form .title span{
+    font-size: 25px;
+    font-weight: 600;
+    color: #6f6f6f;
+}
+
+.form2{
+    left: 500px;
+}
+.form3{
+    left: 500px;
+}
+
+.container .form .inp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 25px auto;
+}
+
+.container .form .inp input{
+    padding: 10px 6px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #999;
+    background-color: transparent;
+    border-radius: 10px;
+    outline: 0;
+}
+
+.container .form .outBeta p{
+    border: 1px solid #999;
+    padding: 10px 10px;
+    border-radius: 20px;
+    width: 100%;
+    margin: 5px;
+    color: rgb(45, 45, 45);
+}
+
+.container .form .outBeta .out{
+    position: relative;
+}
+
+.container .form .outBeta .out button:hover{
+    cursor: pointer;
+}
+
+
+
+.container .form .outBeta .out button{
+    position: absolute;
+    right: 14px;
+    bottom: 8px;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    display: block;
+}
+
+.container .form .outBeta .out .an{
+    display: none;
+}
+
+
+
+.container .form .btn-func{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.btn-funct{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 30px; */
+    margin: 10px 0;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.btn{
+    padding: 10px 20px;
+    border: 1px solid #999;
+    border-radius: 20px;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+/* 
+.container .form .nextform{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+} */
+
+.container .form  .ne1{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+.container .form  .ne2{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    /* height: 1%; */
+    align-items: center;
+}
+
+.container .form  .ne3{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    height: 10%;
+    align-items: center;
+}
+
+
