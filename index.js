@@ -352,7 +352,6 @@ function tinhKtra(xmes){
     const soAlpha = parseInt(document.querySelector("#numl").value);
     const soA = parseInt(document.querySelector("#numa").value);
     const soK = parseInt(document.querySelector("#numk").value);
-    // const res = oClit(soK, (soP - 1));
     const gama = document.querySelector("#gamal1").value;
     // const res2 = (x - soA * gama)%(soP - 1);
     // let result = (res2*res) % (soP - 1);
@@ -441,7 +440,5 @@ function tinhKtra(xmes){
     }
     else{
         alert("Văn bản đã bị sửa đổi.");
-    }
+    };
 };
-
-

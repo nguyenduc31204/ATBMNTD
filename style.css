@@ -26,7 +26,7 @@ body{
 .container{
     position: relative;
     width: 500px;
-    height: 500px;
+    height: 550px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +44,6 @@ body{
     
     height: 100%;
     transition: all 0.4s ease;
-    /* margin: 20px; */
 }
 
 .container .form .title{
@@ -71,6 +70,26 @@ body{
     margin: 25px auto;
 }
 
+.container .form1 .inp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .form1 .inp h2{
+    font-size: 12px;
+    width: 50px;
+    color: #6f6f6f;
+}
+
+.container .form2 .inp h2{
+    font-size: 12px;
+    width: 200px;
+    color: #6f6f6f;
+    margin: 5px 0 5px;
+}
+
 .container .form .inp input{
     padding: 10px 6px;
     width: 100%;
@@ -85,6 +104,12 @@ body{
     color: transparent;
 }
 
+.container .form .outBeta h1{
+    text-align: center;
+    font-size: 20px;
+    color: #6f6f6f;
+}
+
 .container .form .outBeta p{
     border: 1px solid #999;
     padding: 10px 10px;
@@ -92,14 +117,10 @@ body{
     width: 100%;
     margin: 5px;
     height: 40px;
-    /* text-overflow:unset; */
     color: rgb(45, 45, 45);
-    /* overflow-y: hidden; */
-    /* text-overflow: clip; */
     overflow-wrap:break-word;
     overflow: auto;
-    /* overflow: hidden; */
-    /* max-width: 300px; */
+
 }
 
 .container .form .outBeta .out{
@@ -127,10 +148,7 @@ body{
     display: none;
 }
 
-#xicmal1 #xicmal{
-    max-width: 300px;
-    overflow: auto;
-}
+
 
 
 .container .form .btn-func{
