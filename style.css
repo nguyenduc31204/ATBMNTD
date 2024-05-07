@@ -81,13 +81,25 @@ body{
     outline: 0;
 }
 
+.container .form .outBeta p::-webkit-scrollbar{
+    color: transparent;
+}
+
 .container .form .outBeta p{
     border: 1px solid #999;
     padding: 10px 10px;
     border-radius: 20px;
     width: 100%;
     margin: 5px;
+    height: 40px;
+    /* text-overflow:unset; */
     color: rgb(45, 45, 45);
+    /* overflow-y: hidden; */
+    /* text-overflow: clip; */
+    overflow-wrap:break-word;
+    overflow: auto;
+    /* overflow: hidden; */
+    /* max-width: 300px; */
 }
 
 .container .form .outBeta .out{
@@ -115,6 +127,10 @@ body{
     display: none;
 }
 
+#xicmal1 #xicmal{
+    max-width: 300px;
+    overflow: auto;
+}
 
 
 .container .form .btn-func{
