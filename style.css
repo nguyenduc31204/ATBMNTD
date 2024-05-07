@@ -203,6 +203,12 @@ body{
     align-items: center;
 }
 
+.container .form .move{
+    background-color: rgba(0, 0, 255, 0.129);
+}
+
+
+
 .container .form  .ne3{
     display: flex;
     justify-content: center;
