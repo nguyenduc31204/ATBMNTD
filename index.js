@@ -75,6 +75,8 @@ function oClit (k, p) {
     return tin;
 };
 
+console.log(20%11);
+
     
 random.addEventListener("click", function(){
     let alpha = document.querySelector("#numl").value;
@@ -191,7 +193,11 @@ taoKhoa.addEventListener('click', function(){
     document.querySelector("#Kpub").innerHTML = "Key pulic: {" + a + ";  " + al + ";  " + result + "}";
     document.querySelector("#Kpr").innerHTML = "Key private: **********";
     document.getElementById('betal').innerHTML = "Beta: "+ result;
-})
+
+//     console.log(tinhKtra(112));
+
+// console.log(tinhXicma(112, 463));
+});
 
 an.addEventListener('click', function(){
     an.classList.add('an');
@@ -205,46 +211,66 @@ hien.addEventListener('click', function(){
 });
 
 
+function readFile(file, callback) {
+    var reader = new FileReader(); 
+    reader.onload = function(event) { 
+        var content = event.target.result; 
+        callback(content); 
+    }; 
+    reader.readAsText(file); 
+}
 // ky
 ky.addEventListener('click', function () {  
     const soP = parseInt(document.querySelector("#nump").value);
-    var x = (document.querySelector("#numx").value);
+
+    var kyT = [];
     var fileInput = document.querySelector("#file1");
     var file = fileInput.files[0]; 
     if (file) {
-        var reader = new FileReader(); 
-        reader.onload = function(event) { 
-            var content = event.target.result; 
-            document.querySelector("#mess").value = content;
-            x = convert((document.querySelector("#mess").value));
-        }; 
-        reader.readAsText(file); 
-    }
-    else if(document.querySelector("#mess").value !== '') {
-        x = convert(document.querySelector("#mess").value);
+        readFile(file, function(content) {
+            console.log(content);
+
+            var x = parseInt(convert(content)) ; 
+            console.log("Giá trị của x sau khi đọc file:", x);
+            tinhXicma(x, soP);
+        });
     }
 
-    
+    else if(document.querySelector("#mess").value == ''){
+        var x = parseInt(document.querySelector("#numx").value) ; 
+        console.log("Giá trị của x:", x);
+        tinhXicma(x, soP);
+    }
+    else{
+        var x = parseInt(convert(document.querySelector("#mess").value)) ; 
+        console.log("Giá trị của x:", x);
+        tinhXicma(x, soP);
+        
+    }
+});
+
+function tinhXicma(x, soP){
     const soAlpha = parseInt(document.querySelector("#numl").value);
     const soA = parseInt(document.querySelector("#numa").value);
     const soK = parseInt(document.querySelector("#numk").value);
-    console.log(x);
+    
     checkP(soP);
     testInputky();
-
     const res = oClit(soK, (soP - 1));
     const gama = binhPhuongVoiNhan(soK, soAlpha, soP);
+    document.querySelector("#gamal1").value = gama;
     const res2 = (x - soA * gama)%(soP - 1);
     let result = (res2*res) % (soP - 1);
     if(result < 0){
         result = result + (soP - 1);
     }
+    document.querySelector("#xicmal1").value = result;
     document.querySelector("#gamal").innerHTML = "Gamal: " + gama;
     document.querySelector("#xicmal").innerHTML = "Xicmal: " + result;
     if(!isNaN(result) || !isNaN(gama)){
         console.log(alert("Ký thành công!"));
     }
-});
+};
 
 function convert(text) {  
     let st = '';
@@ -257,50 +283,42 @@ function convert(text) {
 ktra.addEventListener('click', function () { 
     var fileInput = document.querySelector("#file2");
     var file = fileInput.files[0]; 
-    var xmes = convert(document.querySelector("#mess1").value);
     if (file) {
-        var reader = new FileReader(); 
-        reader.onload = function(event) { 
-            var content = event.target.result; 
-            document.querySelector("#mess1").value = content;
-            xmes = convert(document.querySelector("#mess1").value);
-        }; 
+        readFile(file, function(content) {
+            var xmes = parseInt(convert(content)) ; 
+            console.log("Giá trị của xmes sau khi đọc file:", xmes);
+            tinhKtra(xmes);
+        });
     }
+
     else{
-        xmes = convert(document.querySelector("#mess1").value);
+        var xmes = parseInt(convert(document.querySelector("#mess1").value)) ; 
+        console.log("Giá trị của xmes:", xmes);
+        tinhKtra(xmes);
     }
-    // parseInt(xmes);
-    console.log(xmes);
-    var x = (document.querySelector("#numx").value);
-    var fileInput = document.querySelector("#file1");
-    var file = fileInput.files[0]; 
-    if (file) {
-        var reader = new FileReader(); 
-        reader.onload = function(event) { 
-            var content = event.target.result; 
-            document.querySelector("#mess").value = content;
-            x = convert((document.querySelector("#mess").value));
-        }; 
-        reader.readAsText(file); 
-    }
-    else if(document.querySelector("#mess").value !== '') {
-        x = convert(document.querySelector("#mess").value);
-    }
+    
+});
+
+function tinhKtra(xmes){
     const soP = parseInt(document.querySelector("#nump").value);
+    const x = parseInt(document.querySelector("#numx").value);
     const soAlpha = parseInt(document.querySelector("#numl").value);
     const soA = parseInt(document.querySelector("#numa").value);
     const soK = parseInt(document.querySelector("#numk").value);
-    const res = oClit(soK, (soP - 1));
-    const gama = binhPhuongVoiNhan(soK, soAlpha, soP);
-    const res2 = (x - soA * gama)%(soP - 1);
-    let result = (res2*res) % (soP - 1);
-    if(result < 0){
-        result = result + (soP - 1);
-    }
-   
+    // const res = oClit(soK, (soP - 1));
+    const gama = document.querySelector("#gamal1").value;
+    // const res2 = (x - soA * gama)%(soP - 1);
+    // let result = (res2*res) % (soP - 1);
+    // if(result < 0){
+    //     result = result + (soP - 1);
+    // }
+    
+    const xicma = document.querySelector("#xicmal1").value;
+   console.log(gama);
+   console.log(xicma);
     var beta = binhPhuongVoiNhan(soA, soAlpha, soP);
     const kq = binhPhuongVoiNhan(gama, beta, soP);
-    const kq2 =  binhPhuongVoiNhan(result, gama, soP);
+    const kq2 =  binhPhuongVoiNhan(xicma, gama, soP);
     let endres = (kq * kq2) % soP;
     let endres2 = binhPhuongVoiNhan(xmes, soAlpha, soP);
     console.log(endres);
@@ -313,7 +331,7 @@ ktra.addEventListener('click', function () {
     document.querySelector("#betal1").innerHTML ="Beta: " + beta;
     document.querySelector("#gamal1").innerHTML ="Gamal: " + gama;
     document.querySelector("#numal1").innerHTML = "Alpha: " + soAlpha;
-    document.querySelector("#xicmal1").innerHTML ="Xicma: " + result;
+    document.querySelector("#xicmal1").innerHTML ="Xicma: " + xicma;
         
     if(Result){
         console.log(alert("Văn bản chưa bị sửa đổi."));
@@ -321,4 +339,19 @@ ktra.addEventListener('click', function () {
     else{
         console.log(alert("Văn bản đã bị sửa đổi."));
     }
-});
+};
+
+function chiaVB(text){
+    const x = 5;
+    var verc = [];
+    for(let i = 0; i < text.length; i += x){
+        verc.push(text.substring(i, i + x));
+    }
+    return verc;
+};
+
+for(let c of chiaVB("anh duc dep trai")){
+    console.log(c);
+}
+
+console.log(chiaVB("anh duc dep trai"));
